@@ -1,4 +1,5 @@
-var mongoose = require("mongoose");
+var mongoose = require('mongoose');
+
 var todoSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -17,4 +18,3 @@ var todoSchema = new mongoose.Schema({
 var Todo = mongoose.model('Todo', todoSchema);
 
 module.exports = Todo;
-
