@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Akoni8/toDoList/issues"
   },
-  "homepage": "https://github.com/Akoni8/toDoList#readme"
+  "homepage": "https://github.com/Akoni8/toDoList#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
