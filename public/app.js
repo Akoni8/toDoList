@@ -14,11 +14,8 @@ $(document).ready(function(){
 function addTodos(todos){
     //add todos to page
     todos.forEach(function(todo){
-       var newTodo = $('<li class = "task">'+ todo.name + '</li>');
-       if(todo.completed){
-           newTodo.addClass("done");
-       }
-       $('.list').append(newTodo);
+      addTodo(todo);
+    
     });
 }
 
@@ -27,9 +24,20 @@ function createTodo(){
     var userInput = $('#todoInput').val();
     $.post('/api/todo',  {name: userInput})
     .then(function(newTodo){
-        console.log(newTodo);
+         var userInput = $('#todoInput').val("");
+        addTodo(newTodo);
     })
     .catch(function(err){
         console.log(err);
     })
+}
+
+function addTodo(todo){
+     var newTodo = $('<li>'+ todo.name + '</li>');
+     newTodo.addClass("task");
+     $('.list').append(newTodo);
+       if(todo.completed){
+           newTodo.addClass("done");
+       }
+       
 }
